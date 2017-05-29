@@ -21,7 +21,7 @@ end
 Conf = {
         host = "127.0.0.1",
         port = "5432",
-        database = "unixjs",
+        database = "gis",
         user = "unixjs",
         password = "K3J9 8LMN 02F3 B3LW"
 };

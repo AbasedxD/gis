@@ -1,81 +1,8 @@
-CREATE SCHEMA IF NOT EXISTS "Gis";
+﻿WITH "Ins1" AS (INSERT INTO "Gis"."Envase"("Numero", "NumeroInterno", "Material", "Capacidad", "ClaseProducto", "NormaTecnica")
+		VALUES(255, 588, 'Metal', 100, 'rara', 'ISO34') RETURNING "Id" AS "EnvaseId"),
 
-CREATE TABLE IF NOT EXISTS "Gis"."Envase"
-(
-    "Id" BIGSERIAL PRIMARY KEY,
-    "Numero" INTEGER NOT NULL UNIQUE,
-    "NumeroInterno" INTEGER UNIQUE,
-    "Material" VARCHAR(64),
-    "Capacidad" DECIMAL,
-    "ClaseProducto" VARCHAR(64),
-    "NormaTecnica" VARCHAR(64)
-);
+     "Ins2" AS (INSERT INTO "Gis"."EnvaseComplementaryInfo"("EnvaseId", "Presion", "AlturaConValvula", "PesoConValvula", "Valvula", "TipoValvula", "AcabadoColor")
+		SELECT "EnvaseId", 8500, 4500, 7800, false, 'esrer', 'ewwarr' FROM "Ins1" RETURNING "EnvaseId")
 
-CREATE TABLE IF NOT EXISTS "Gis"."EnvaseComplementaryInfo"
-(
-    "EnvaseId" BIGINT PRIMARY KEY NOT NULL REFERENCES "Gis"."Envase" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    "Presion" DECIMAL,
-    "AlturaConValvula" DECIMAL,
-    "PesoConValvula" DECIMAL,
-    "Valvula" BOOLEAN,
-    "TipoValvula" VARCHAR(64),
-    "AcabadoColor" VARCHAR(128)
-);
-
-CREATE TABLE IF NOT EXISTS "Gis"."EnvaseGeneralidades"
-(
-    "EnvaseId" BIGINT PRIMARY KEY NOT NULL REFERENCES "Gis"."Envase" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    "Proveedor" VARCHAR(128),
-    "FechaCompra" DATE,
-    "Garantia" BOOLEAN,
-    "FechaFabricacion" DATE,
-    "PruebaHidrostatica" BOOLEAN,
-    "Alquilado" BOOLEAN,
-    "FechaAlquiler" DATE,
-    "Observaciones" VARCHAR(512)
-);
-
-CREATE TABLE IF NOT EXISTS "Gis"."Produccion1"
-(
-    "EnvaseId" BIGINT PRIMARY KEY NOT NULL REFERENCES "Gis"."Envase" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    "FechaFabricacion" DATE,
-    "FechaVencimiento" DATE,
-    "Lote" VARCHAR(16),
-    "Cantidad" DECIMAL,
-    "HoraInicial" TIME
-);
-
-CREATE TABLE IF NOT EXISTS "Gis"."Produccion2"
-(
-    "EnvaseId" BIGINT PRIMARY KEY NOT NULL REFERENCES "Gis"."Envase" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    "HoraFinal" TIME,
-    "Turno" VARCHAR(16),
-    "Observaciones" VARCHAR(512),
-    "PurezaFinal" DECIMAL,
-    "PresionFinal" DECIMAL
-);
-
-CREATE TABLE IF NOT EXISTS "Gis"."Cliente"
-(
-    "Id" BIGSERIAL PRIMARY KEY,
-    "NitCC" VARCHAR(32),
-    "Nombre" VARCHAR(128),
-    "Direccion" VARCHAR(128),
-    "Telefono" VARCHAR(16)
-);
-
-CREATE TABLE IF NOT EXISTS "Gis"."Remision"
-(
-    "Id" BIGSERIAL PRIMARY KEY NOT NULL,
-    "ClienteId" BIGINT NOT NULL REFERENCES "Gis"."Cliente" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    "Numero" BIGINT NOT NULL,
-    "Fecha" DATE
-);
-
-CREATE TABLE IF NOT EXISTS "Gis"."RemisionRecord"
-(
-    "RemisionId" BIGINT PRIMARY KEY NOT NULL REFERENCES "Gis"."Remision" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    "EnvaseId" BIGINT NOT NULL REFERENCES "Gis"."Envase" ("Id") ON UPDATE CASCADE ON DELETE CASCADE,
-    "Entra" INTEGER,
-    "Sale" INTEGER
-);
+		INSERT INTO "Gis"."EnvaseGeneralidades" ("EnvaseId", "Proveedor", "FechaCompra", "Garantia", "FechaFabricacion", "PruebaHidrostatica", "Alquilado", "FechaAlquiler", "Observaciones")
+		SELECT "Ins1"."EnvaseId", 'juanchoProvee', '2010-06-23'::DATE, true, '2010-06-23'::DATE, false, false, '2010-06-23'::DATE, 'servlet' ;

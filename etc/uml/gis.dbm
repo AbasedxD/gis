@@ -35,7 +35,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="User">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="60" y="283"/>
+	<position x="600" y="220"/>
 	<column name="Id" not-null="true" sequence="&quot;Auth&quot;.&quot;User_Id_seq&quot;">
 		<type name="bigint"/>
 	</column>
@@ -64,7 +64,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Media">
 	<schema name="public"/>
 	<role name="unixjs"/>
-	<position x="60" y="60"/>
+	<position x="520" y="60"/>
 	<column name="Id" not-null="true" sequence="public.&quot;Media_Id_seq&quot;">
 		<type name="bigint"/>
 	</column>
@@ -91,7 +91,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="UserBasicInfo">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="400" y="283"/>
+	<position x="60" y="363"/>
 	<column name="UserId" not-null="true">
 		<type name="bigint"/>
 	</column>
@@ -121,7 +121,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="UserComplementaryInfo">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="780" y="283"/>
+	<position x="600" y="403"/>
 	<column name="UserId" not-null="true">
 		<type name="bigint"/>
 	</column>
@@ -148,7 +148,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <view name="UserAll">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="380" y="423"/>
+	<position x="1100" y="663"/>
 	<reference>
 		<expression><![CDATA[ SELECT "User"."UserName",
     "User"."Password",
@@ -180,7 +180,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Group">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="1120" y="283"/>
+	<position x="1280" y="360"/>
 	<column name="Id" not-null="true" sequence="&quot;Auth&quot;.&quot;Group_Id_seq&quot;">
 		<type name="bigint"/>
 	</column>
@@ -206,7 +206,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="UserGroup">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="1440" y="283"/>
+	<position x="1300" y="223"/>
 	<column name="Id" not-null="true" sequence="&quot;Auth&quot;.&quot;UserGroup_Id_seq&quot;">
 		<type name="bigint"/>
 	</column>
@@ -227,7 +227,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <view name="UserGroupAll">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="640" y="423"/>
+	<position x="880" y="663"/>
 	<reference>
 		<expression><![CDATA[ SELECT "User"."Id" AS "UserId",
     "User"."UserName",
@@ -250,7 +250,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="AppRole">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="60" y="423"/>
+	<position x="960" y="480"/>
 	<column name="Id" not-null="true" sequence="&quot;Auth&quot;.&quot;AppRole_Id_seq&quot;">
 		<type name="bigint"/>
 	</column>
@@ -277,7 +277,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <view name="AppRoleAll">
 	<schema name="&quot;Auth&quot;"/>
 	<role name="unixjs"/>
-	<position x="880" y="423"/>
+	<position x="1340" y="663"/>
 	<reference>
 		<expression><![CDATA[ SELECT "UserGroupAll"."UserName" AS "User",
     "AppRole"."Image",
@@ -305,7 +305,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Envase">
 	<schema name="&quot;Gis&quot;"/>
 	<role name="unixjs"/>
-	<position x="60" y="663"/>
+	<position x="620" y="903"/>
 	<column name="Id" not-null="true" sequence="&quot;Gis&quot;.&quot;Envase_Id_seq&quot;">
 		<type name="bigint"/>
 	</column>
@@ -341,7 +341,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="EnvaseComplementaryInfo">
 	<schema name="&quot;Gis&quot;"/>
 	<role name="unixjs"/>
-	<position x="440" y="663"/>
+	<position x="620" y="1083"/>
 	<column name="EnvaseId" not-null="true">
 		<type name="bigint"/>
 	</column>
@@ -371,7 +371,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="EnvaseGeneralidades">
 	<schema name="&quot;Gis&quot;"/>
 	<role name="unixjs"/>
-	<position x="840" y="663"/>
+	<position x="620" y="1263"/>
 	<column name="EnvaseId" not-null="true">
 		<type name="bigint"/>
 	</column>
@@ -407,7 +407,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Produccion1">
 	<schema name="&quot;Gis&quot;"/>
 	<role name="unixjs"/>
-	<position x="1240" y="663"/>
+	<position x="1220" y="1063"/>
 	<column name="EnvaseId" not-null="true">
 		<type name="bigint"/>
 	</column>
@@ -434,7 +434,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Produccion2">
 	<schema name="&quot;Gis&quot;"/>
 	<role name="unixjs"/>
-	<position x="1640" y="663"/>
+	<position x="1240" y="1223"/>
 	<column name="EnvaseId" not-null="true">
 		<type name="bigint"/>
 	</column>
@@ -469,7 +469,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Cliente">
 	<schema name="&quot;Gis&quot;"/>
 	<role name="unixjs"/>
-	<position x="60" y="843"/>
+	<position x="120" y="923"/>
 	<column name="Id" not-null="true" sequence="&quot;Gis&quot;.&quot;Cliente_Id_seq&quot;">
 		<type name="bigint"/>
 	</column>
@@ -501,7 +501,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="Remision">
 	<schema name="&quot;Gis&quot;"/>
 	<role name="unixjs"/>
-	<position x="400" y="843"/>
+	<position x="160" y="1103"/>
 	<column name="Id" not-null="true" sequence="&quot;Gis&quot;.&quot;Remision_Id_seq&quot;">
 		<type name="bigint"/>
 	</column>
@@ -522,7 +522,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="RemisionRecord">
 	<schema name="&quot;Gis&quot;"/>
 	<role name="unixjs"/>
-	<position x="620" y="843"/>
+	<position x="260" y="1303"/>
 	<column name="RemisionId" not-null="true">
 		<type name="bigint"/>
 	</column>
