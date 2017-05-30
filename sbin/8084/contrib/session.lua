@@ -2,7 +2,7 @@
     Lua 5.1 Copyright (C) 1994-2006 Lua.org, PUC-Rio
 ]]
 
-package.path = ngx.var.app.."/?.lua;"..package.path
+package.path = ngx.var.app.."/8084/?.lua;"..package.path
 local Http = require ("contrib/http");
 local Crypt = require ("contrib/crypt");
 local Sql = require ("contrib/sql");

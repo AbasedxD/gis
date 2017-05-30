@@ -401,3 +401,301 @@ coroutine 0:
 2017/05/28 21:35:32 [notice] 974#0: worker process 975 exited with code 0
 2017/05/28 21:35:32 [notice] 974#0: exit
 2017/05/28 21:35:32 [notice] 974#0: exit
+2017/05/29 15:18:35 [notice] 5375#0: using the "epoll" event method
+2017/05/29 15:18:35 [notice] 5375#0: using the "epoll" event method
+2017/05/29 15:18:35 [notice] 5375#0: openresty/1.11.2.2
+2017/05/29 15:18:35 [notice] 5375#0: openresty/1.11.2.2
+2017/05/29 15:18:35 [notice] 5375#0: built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
+2017/05/29 15:18:35 [notice] 5375#0: built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
+2017/05/29 15:18:35 [notice] 5375#0: OS: Linux 4.4.0-53-generic
+2017/05/29 15:18:35 [notice] 5375#0: OS: Linux 4.4.0-53-generic
+2017/05/29 15:18:35 [notice] 5375#0: getrlimit(RLIMIT_NOFILE): 1024:65536
+2017/05/29 15:18:35 [notice] 5375#0: getrlimit(RLIMIT_NOFILE): 1024:65536
+2017/05/29 15:18:35 [notice] 5377#0: start worker processes
+2017/05/29 15:18:35 [notice] 5377#0: start worker processes
+2017/05/29 15:18:35 [notice] 5377#0: start worker process 5378
+2017/05/29 15:18:35 [notice] 5377#0: start worker process 5378
+2017/05/29 15:18:47 [error] 5378#0: *4 lua entry thread aborted: runtime error: .../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: module 'contrib/http' not found:
+	no field package.preload['contrib/http']
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http/init.lua'
+	no file '/usr/local/openresty/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/lualib/contrib/http/init.lua'
+	no file './contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta2/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.so'
+	no file '/usr/local/openresty/lualib/contrib/http.so'
+	no file './contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: in function <.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:1>, client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *4 lua entry thread aborted: runtime error: .../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: module 'contrib/http' not found:
+	no field package.preload['contrib/http']
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http/init.lua'
+	no file '/usr/local/openresty/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/lualib/contrib/http/init.lua'
+	no file './contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta2/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.so'
+	no file '/usr/local/openresty/lualib/contrib/http.so'
+	no file './contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: in function <.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:1>, client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *4 lua entry thread aborted: runtime error: .../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: module 'contrib/http' not found:
+	no field package.preload['contrib/http']
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http/init.lua'
+	no file '/usr/local/openresty/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/lualib/contrib/http/init.lua'
+	no file './contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta2/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.so'
+	no file '/usr/local/openresty/lualib/contrib/http.so'
+	no file './contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: in function <.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:1>, client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *4 open() "/home/joseluis/Developments/gis/html/50x.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *4 open() "/home/joseluis/Developments/gis/html/50x.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *4 open() "/home/joseluis/Developments/gis/html/50x.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *5 open() "/home/joseluis/Developments/gis/share/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *5 open() "/home/joseluis/Developments/gis/share/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *5 open() "/home/joseluis/Developments/gis/share/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *5 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *5 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:47 [error] 5378#0: *5 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:59 [error] 5378#0: *7 lua entry thread aborted: runtime error: .../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: module 'contrib/http' not found:
+	no field package.preload['contrib/http']
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http/init.lua'
+	no file '/usr/local/openresty/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/lualib/contrib/http/init.lua'
+	no file './contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta2/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.so'
+	no file '/usr/local/openresty/lualib/contrib/http.so'
+	no file './contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: in function <.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:1>, client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:59 [error] 5378#0: *7 lua entry thread aborted: runtime error: .../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: module 'contrib/http' not found:
+	no field package.preload['contrib/http']
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http/init.lua'
+	no file '/usr/local/openresty/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/lualib/contrib/http/init.lua'
+	no file './contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta2/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.so'
+	no file '/usr/local/openresty/lualib/contrib/http.so'
+	no file './contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: in function <.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:1>, client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:59 [error] 5378#0: *7 lua entry thread aborted: runtime error: .../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: module 'contrib/http' not found:
+	no field package.preload['contrib/http']
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/home/joseluis/Developments/gis/sbin/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http/init.lua'
+	no file '/usr/local/openresty/lualib/contrib/http.lua'
+	no file '/usr/local/openresty/lualib/contrib/http/init.lua'
+	no file './contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/luajit-2.1.0-beta2/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http.lua'
+	no file '/usr/local/openresty/luajit/share/lua/5.1/contrib/http/init.lua'
+	no file '/usr/local/openresty/site/lualib/contrib/http.so'
+	no file '/usr/local/openresty/lualib/contrib/http.so'
+	no file './contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/openresty/luajit/lib/lua/5.1/contrib/http.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+stack traceback:
+coroutine 0:
+	[C]: in function 'require'
+	.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:6: in function <.../joseluis/Developments/gis/sbin/8084/contrib/session.lua:1>, client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:59 [error] 5378#0: *7 open() "/home/joseluis/Developments/gis/html/50x.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:59 [error] 5378#0: *7 open() "/home/joseluis/Developments/gis/html/50x.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:18:59 [error] 5378#0: *7 open() "/home/joseluis/Developments/gis/html/50x.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "POST /session/ HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:19:53 [notice] 5377#0: signal 15 (SIGTERM) received, exiting
+2017/05/29 15:19:53 [notice] 5377#0: signal 15 (SIGTERM) received, exiting
+2017/05/29 15:19:53 [notice] 5378#0: exiting
+2017/05/29 15:19:53 [notice] 5378#0: exiting
+2017/05/29 15:19:53 [notice] 5378#0: exit
+2017/05/29 15:19:53 [notice] 5377#0: signal 17 (SIGCHLD) received
+2017/05/29 15:19:53 [notice] 5377#0: signal 17 (SIGCHLD) received
+2017/05/29 15:19:53 [notice] 5377#0: worker process 5378 exited with code 0
+2017/05/29 15:19:53 [notice] 5377#0: worker process 5378 exited with code 0
+2017/05/29 15:19:53 [notice] 5377#0: exit
+2017/05/29 15:19:53 [notice] 5377#0: exit
+2017/05/29 15:19:55 [notice] 5711#0: using the "epoll" event method
+2017/05/29 15:19:55 [notice] 5711#0: using the "epoll" event method
+2017/05/29 15:19:55 [notice] 5711#0: openresty/1.11.2.2
+2017/05/29 15:19:55 [notice] 5711#0: openresty/1.11.2.2
+2017/05/29 15:19:55 [notice] 5711#0: built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
+2017/05/29 15:19:55 [notice] 5711#0: built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
+2017/05/29 15:19:55 [notice] 5711#0: OS: Linux 4.4.0-53-generic
+2017/05/29 15:19:55 [notice] 5711#0: OS: Linux 4.4.0-53-generic
+2017/05/29 15:19:55 [notice] 5711#0: getrlimit(RLIMIT_NOFILE): 1024:65536
+2017/05/29 15:19:55 [notice] 5711#0: getrlimit(RLIMIT_NOFILE): 1024:65536
+2017/05/29 15:19:55 [notice] 5712#0: start worker processes
+2017/05/29 15:19:55 [notice] 5712#0: start worker processes
+2017/05/29 15:19:55 [notice] 5712#0: start worker process 5713
+2017/05/29 15:19:55 [notice] 5712#0: start worker process 5713
+2017/05/29 15:21:29 [error] 5713#0: *33 open() "/home/joseluis/Developments/gis/share/images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:21:29 [error] 5713#0: *33 open() "/home/joseluis/Developments/gis/share/images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:21:29 [error] 5713#0: *33 open() "/home/joseluis/Developments/gis/share/images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:21:29 [error] 5713#0: *33 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:21:29 [error] 5713#0: *33 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:21:29 [error] 5713#0: *33 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/1cm9vdF8xMjczNjQ4NTc0XzBfCg.png HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:30:38 [error] 5713#0: *72 open() "/home/joseluis/Developments/gis/share/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:30:38 [error] 5713#0: *72 open() "/home/joseluis/Developments/gis/share/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:30:38 [error] 5713#0: *72 open() "/home/joseluis/Developments/gis/share/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:30:38 [error] 5713#0: *72 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:30:38 [error] 5713#0: *72 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 15:30:38 [error] 5713#0: *72 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /favicon.ico HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:30:29 [error] 5713#0: *100 open() "/home/joseluis/Developments/gis/bin/gisprod.min.js" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?418 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:30:29 [error] 5713#0: *100 open() "/home/joseluis/Developments/gis/bin/gisprod.min.js" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?418 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:30:29 [error] 5713#0: *100 open() "/home/joseluis/Developments/gis/bin/gisprod.min.js" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?418 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:30:29 [error] 5713#0: *100 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?418 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:30:29 [error] 5713#0: *100 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?418 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:30:29 [error] 5713#0: *100 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?418 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:47:25 [error] 5713#0: *111 open() "/home/joseluis/Developments/gis/bin/gisprod.min.js" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?785 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:47:25 [error] 5713#0: *111 open() "/home/joseluis/Developments/gis/bin/gisprod.min.js" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?785 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:47:25 [error] 5713#0: *111 open() "/home/joseluis/Developments/gis/bin/gisprod.min.js" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?785 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:47:25 [error] 5713#0: *111 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?785 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:47:25 [error] 5713#0: *111 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?785 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 16:47:25 [error] 5713#0: *111 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /bin/gisprod.min.js?785 HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:25:30 [notice] 5712#0: signal 15 (SIGTERM) received, exiting
+2017/05/29 19:25:30 [notice] 5712#0: signal 15 (SIGTERM) received, exiting
+2017/05/29 19:25:30 [notice] 5713#0: exiting
+2017/05/29 19:25:30 [notice] 5713#0: exiting
+2017/05/29 19:25:30 [notice] 5712#0: signal 14 (SIGALRM) received
+2017/05/29 19:25:30 [notice] 5712#0: signal 14 (SIGALRM) received
+2017/05/29 19:25:30 [notice] 5713#0: exit
+2017/05/29 19:25:30 [notice] 5712#0: signal 17 (SIGCHLD) received
+2017/05/29 19:25:30 [notice] 5712#0: signal 17 (SIGCHLD) received
+2017/05/29 19:25:30 [notice] 5712#0: worker process 5713 exited with code 0
+2017/05/29 19:25:30 [notice] 5712#0: worker process 5713 exited with code 0
+2017/05/29 19:25:30 [notice] 5712#0: exit
+2017/05/29 19:25:30 [notice] 5712#0: exit
+2017/05/29 19:25:34 [notice] 23554#0: using the "epoll" event method
+2017/05/29 19:25:34 [notice] 23554#0: using the "epoll" event method
+2017/05/29 19:25:34 [notice] 23554#0: openresty/1.11.2.2
+2017/05/29 19:25:34 [notice] 23554#0: openresty/1.11.2.2
+2017/05/29 19:25:34 [notice] 23554#0: built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
+2017/05/29 19:25:34 [notice] 23554#0: built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4) 
+2017/05/29 19:25:34 [notice] 23554#0: OS: Linux 4.4.0-53-generic
+2017/05/29 19:25:34 [notice] 23554#0: OS: Linux 4.4.0-53-generic
+2017/05/29 19:25:34 [notice] 23554#0: getrlimit(RLIMIT_NOFILE): 1024:65536
+2017/05/29 19:25:34 [notice] 23554#0: getrlimit(RLIMIT_NOFILE): 1024:65536
+2017/05/29 19:25:34 [notice] 23555#0: start worker processes
+2017/05/29 19:25:34 [notice] 23555#0: start worker processes
+2017/05/29 19:25:34 [notice] 23555#0: start worker process 23556
+2017/05/29 19:25:34 [notice] 23555#0: start worker process 23556
+2017/05/29 19:31:49 [error] 23556#0: *20 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:31:49 [error] 23556#0: *20 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:31:49 [error] 23556#0: *20 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:31:49 [error] 23556#0: *20 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:31:49 [error] 23556#0: *20 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:31:49 [error] 23556#0: *20 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:59:54 [error] 23556#0: *40 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:59:54 [error] 23556#0: *40 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:59:54 [error] 23556#0: *40 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:59:54 [error] 23556#0: *40 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:59:54 [error] 23556#0: *40 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 19:59:54 [error] 23556#0: *40 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:00:45 [error] 23556#0: *48 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:00:45 [error] 23556#0: *48 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:00:45 [error] 23556#0: *48 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:00:45 [error] 23556#0: *48 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:00:45 [error] 23556#0: *48 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:00:45 [error] 23556#0: *48 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:01:17 [error] 23556#0: *62 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:01:17 [error] 23556#0: *62 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:01:17 [error] 23556#0: *62 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:01:17 [error] 23556#0: *62 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:01:17 [error] 23556#0: *62 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:01:17 [error] 23556#0: *62 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:07:47 [error] 23556#0: *76 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:07:47 [error] 23556#0: *76 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:07:47 [error] 23556#0: *76 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:07:47 [error] 23556#0: *76 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:07:47 [error] 23556#0: *76 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:07:47 [error] 23556#0: *76 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:29 [error] 23556#0: *84 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:29 [error] 23556#0: *84 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:29 [error] 23556#0: *84 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:29 [error] 23556#0: *84 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:29 [error] 23556#0: *84 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:29 [error] 23556#0: *84 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:47 [error] 23556#0: *91 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:47 [error] 23556#0: *91 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:47 [error] 23556#0: *91 open() "/home/joseluis/Developments/gis/share/images/system/appbar.clock.svg" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:47 [error] 23556#0: *91 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:47 [error] 23556#0: *91 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:08:47 [error] 23556#0: *91 open() "/home/joseluis/Developments/gis/share/404.html" failed (2: No such file or directory), client: 127.0.0.1, server: www.gisaguachica.com.co, request: "GET /images/system/appbar.clock.svg HTTP/1.0", host: "127.0.0.1:8080", referrer: "http://www.gisaguachica.com.co/"
+2017/05/29 20:27:17 [notice] 23555#0: signal 15 (SIGTERM) received, exiting
+2017/05/29 20:27:17 [notice] 23555#0: signal 15 (SIGTERM) received, exiting
+2017/05/29 20:27:17 [notice] 23556#0: exiting
+2017/05/29 20:27:17 [notice] 23556#0: exiting
+2017/05/29 20:27:17 [notice] 23555#0: signal 14 (SIGALRM) received
+2017/05/29 20:27:17 [notice] 23555#0: signal 14 (SIGALRM) received
+2017/05/29 20:27:17 [notice] 23556#0: exit
+2017/05/29 20:27:17 [notice] 23555#0: signal 17 (SIGCHLD) received
+2017/05/29 20:27:17 [notice] 23555#0: signal 17 (SIGCHLD) received
+2017/05/29 20:27:17 [notice] 23555#0: worker process 23556 exited with code 0
+2017/05/29 20:27:17 [notice] 23555#0: worker process 23556 exited with code 0
+2017/05/29 20:27:17 [notice] 23555#0: exit
+2017/05/29 20:27:17 [notice] 23555#0: exit
