@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.0-beta1" last-position="1509,0" last-zoom="0.75"
+	 default-schema="public" default-owner="postgres">
+<role name="unixjs"
+      inherit="true"
+      login="true"
+      encrypted="true"
+      password="********">
+</role>
+
+<database name="gis" encoding="UTF8" lc-collate="es_CO.utf8" lc-ctype="es_CO.utf8">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="Auth" rect-visible="true" fill-color="#b4437b">
+	<role name="unixjs"/>
+</schema>
+
+<sequence name="User_Id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+</sequence>
+
+<table name="User">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="560" y="220"/>
+	<column name="Id" not-null="true" sequence="&quot;Auth&quot;.&quot;User_Id_seq&quot;">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="UserName" not-null="true">
+		<type name="character varying" length="32"/>
+	</column>
+	<column name="Password" not-null="true">
+		<type name="character varying" length="256"/>
+	</column>
+	<constraint name="User_pkey" type="pk-constr" table="&quot;Auth&quot;.&quot;User&quot;">
+		<columns names="Id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="User_UserName_key" type="uq-constr" table="&quot;Auth&quot;.&quot;User&quot;">
+		<columns names="UserName" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="Media_Id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="unixjs"/>
+</sequence>
+
+<table name="Media">
+	<schema name="public"/>
+	<role name="unixjs"/>
+	<position x="100" y="80"/>
+	<column name="Id" not-null="true" sequence="public.&quot;Media_Id_seq&quot;">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Name" not-null="true">
+		<type name="character varying" length="256"/>
+	</column>
+	<column name="Type" not-null="true">
+		<type name="character varying" length="8"/>
+	</column>
+	<column name="FileName" not-null="true">
+		<type name="character varying" length="256"/>
+	</column>
+	<column name="UserId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<constraint name="Media_pkey" type="pk-constr" table="public.&quot;Media&quot;">
+		<columns names="Id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="Media_Name_Type_key" type="uq-constr" table="public.&quot;Media&quot;">
+		<columns names="Name,Type" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="UserBasicInfo">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="580" y="20"/>
+	<column name="UserId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="DocumentType" not-null="true">
+		<type name="character varying" length="8"/>
+	</column>
+	<column name="DocumentNum" not-null="true">
+		<type name="character varying" length="16"/>
+	</column>
+	<column name="Country" not-null="true">
+		<type name="character varying" length="64"/>
+	</column>
+	<column name="Name" not-null="true">
+		<type name="character varying" length="64"/>
+	</column>
+	<column name="LastName" not-null="true">
+		<type name="character varying" length="64"/>
+	</column>
+	<constraint name="UserBasicInfo_pkey" type="pk-constr" table="&quot;Auth&quot;.&quot;UserBasicInfo&quot;">
+		<columns names="UserId" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="UserBasicInfo_DocumentType_DocumentNum_Country_key" type="uq-constr" table="&quot;Auth&quot;.&quot;UserBasicInfo&quot;">
+		<columns names="DocumentType,DocumentNum,Country" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="UserComplementaryInfo">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="320" y="400"/>
+	<column name="UserId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Avatar">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Phone">
+		<type name="character varying" length="24"/>
+	</column>
+	<column name="Email">
+		<type name="character varying" length="64"/>
+	</column>
+	<column name="Address">
+		<type name="character varying" length="64"/>
+	</column>
+	<constraint name="UserComplementaryInfo_pkey" type="pk-constr" table="&quot;Auth&quot;.&quot;UserComplementaryInfo&quot;">
+		<columns names="UserId" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="UserComplementaryInfo_Avatar_key" type="uq-constr" table="&quot;Auth&quot;.&quot;UserComplementaryInfo&quot;">
+		<columns names="Avatar" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<view name="UserAll">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="840" y="480"/>
+	<reference>
+		<expression><![CDATA[ SELECT "User"."UserName",
+    "User"."Password",
+    "UserBasicInfo"."DocumentType",
+    "UserBasicInfo"."DocumentNum",
+    "UserBasicInfo"."Country",
+    "UserBasicInfo"."Name",
+    "UserBasicInfo"."LastName",
+    "Media"."Name" AS "AvatarName",
+    "Media"."Type" AS "AvatarType",
+    "UserComplementaryInfo"."Phone",
+    "UserComplementaryInfo"."Email",
+    "UserComplementaryInfo"."Address"
+   FROM ((("Auth"."User"
+     JOIN "Auth"."UserBasicInfo" ON (("User"."Id" = "UserBasicInfo"."UserId")))
+     JOIN "Auth"."UserComplementaryInfo" ON (("User"."Id" = "UserComplementaryInfo"."UserId")))
+     JOIN "Media" ON (("Media"."Id" = "UserComplementaryInfo"."Avatar")));]]></expression>
+	</reference>
+</view>
+
+<sequence name="Group_Id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+</sequence>
+
+<table name="Group">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="1260" y="280"/>
+	<column name="Id" not-null="true" sequence="&quot;Auth&quot;.&quot;Group_Id_seq&quot;">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Name" not-null="true">
+		<type name="character varying" length="32"/>
+	</column>
+	<constraint name="Group_pkey" type="pk-constr" table="&quot;Auth&quot;.&quot;Group&quot;">
+		<columns names="Id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="Group_Name_key" type="uq-constr" table="&quot;Auth&quot;.&quot;Group&quot;">
+		<columns names="Name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="UserGroup_Id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+</sequence>
+
+<table name="UserGroup">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="1280" y="20"/>
+	<column name="Id" not-null="true" sequence="&quot;Auth&quot;.&quot;UserGroup_Id_seq&quot;">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="UserId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="GroupId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<constraint name="UserGroup_pkey" type="pk-constr" table="&quot;Auth&quot;.&quot;UserGroup&quot;">
+		<columns names="Id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="UserGroup_UserId_GroupId_key" type="uq-constr" table="&quot;Auth&quot;.&quot;UserGroup&quot;">
+		<columns names="UserId,GroupId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<view name="UserGroupAll">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="1100" y="460"/>
+	<reference>
+		<expression><![CDATA[ SELECT "User"."Id" AS "UserId",
+    "User"."UserName",
+    "Group"."Id" AS "GroupId",
+    "Group"."Name" AS "GroupName"
+   FROM (("Auth"."UserGroup"
+     JOIN "Auth"."User" ON (("User"."Id" = "UserGroup"."UserId")))
+     JOIN "Auth"."Group" ON (("Group"."Id" = "UserGroup"."GroupId")));]]></expression>
+	</reference>
+</view>
+
+<sequence name="AppRole_Id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+</sequence>
+
+<table name="AppRole">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="1060" y="560"/>
+	<column name="Id" not-null="true" sequence="&quot;Auth&quot;.&quot;AppRole_Id_seq&quot;">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Image" not-null="true">
+		<type name="character varying" length="32"/>
+	</column>
+	<column name="Label" not-null="true">
+		<type name="character varying" length="16"/>
+	</column>
+	<column name="Name" not-null="true">
+		<type name="character varying" length="16"/>
+	</column>
+	<column name="GroupId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<constraint name="AppRole_pkey" type="pk-constr" table="&quot;Auth&quot;.&quot;AppRole&quot;">
+		<columns names="Id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="AppRole_Name_key" type="uq-constr" table="&quot;Auth&quot;.&quot;AppRole&quot;">
+		<columns names="Name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<view name="AppRoleAll">
+	<schema name="&quot;Auth&quot;"/>
+	<role name="unixjs"/>
+	<position x="1320" y="460"/>
+	<reference>
+		<expression><![CDATA[ SELECT "UserGroupAll"."UserName" AS "User",
+    "AppRole"."Image",
+    "AppRole"."Label",
+    "AppRole"."Name",
+    "UserGroupAll"."GroupName" AS "Group"
+   FROM ("Auth"."AppRole"
+     JOIN "Auth"."UserGroupAll" ON (("AppRole"."GroupId" = "UserGroupAll"."GroupId")))
+  ORDER BY "AppRole"."Label";]]></expression>
+	</reference>
+</view>
+
+<schema name="Gis" rect-visible="true" fill-color="#81151d">
+	<role name="unixjs"/>
+</schema>
+
+<sequence name="Envase_Id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+</sequence>
+
+<table name="Envase">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+	<position x="2740" y="80"/>
+	<column name="Id" not-null="true" sequence="&quot;Gis&quot;.&quot;Envase_Id_seq&quot;">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Numero" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="NumeroInterno">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="Material">
+		<type name="character varying" length="64"/>
+	</column>
+	<column name="Capacidad">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="ClaseProducto">
+		<type name="character varying" length="64"/>
+	</column>
+	<column name="NormaTecnica">
+		<type name="character varying" length="64"/>
+	</column>
+	<constraint name="Envase_pkey" type="pk-constr" table="&quot;Gis&quot;.&quot;Envase&quot;">
+		<columns names="Id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="Envase_Numero_key" type="uq-constr" table="&quot;Gis&quot;.&quot;Envase&quot;">
+		<columns names="Numero" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="Envase_NumeroInterno_key" type="uq-constr" table="&quot;Gis&quot;.&quot;Envase&quot;">
+		<columns names="NumeroInterno" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="EnvaseComplementaryInfo">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+	<position x="2180" y="80"/>
+	<column name="EnvaseId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Presion">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="AlturaConValvula">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="PesoConValvula">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="Valvula">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="TipoValvula">
+		<type name="character varying" length="64"/>
+	</column>
+	<column name="AcabadoColor">
+		<type name="character varying" length="128"/>
+	</column>
+	<constraint name="EnvaseComplementaryInfo_pkey" type="pk-constr" table="&quot;Gis&quot;.&quot;EnvaseComplementaryInfo&quot;">
+		<columns names="EnvaseId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="EnvaseGeneralidades">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+	<position x="2740" y="340"/>
+	<column name="EnvaseId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Proveedor">
+		<type name="character varying" length="128"/>
+	</column>
+	<column name="FechaCompra">
+		<type name="date" length="0"/>
+	</column>
+	<column name="Garantia">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="FechaFabricacion">
+		<type name="date" length="0"/>
+	</column>
+	<column name="PruebaHidrostatica">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="Alquilado">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="FechaAlquiler">
+		<type name="date" length="0"/>
+	</column>
+	<column name="Observaciones">
+		<type name="character varying" length="512"/>
+	</column>
+	<constraint name="EnvaseGeneralidades_pkey" type="pk-constr" table="&quot;Gis&quot;.&quot;EnvaseGeneralidades&quot;">
+		<columns names="EnvaseId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Produccion1">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+	<position x="3320" y="100"/>
+	<column name="EnvaseId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="FechaFabricacion">
+		<type name="date" length="0"/>
+	</column>
+	<column name="FechaVencimiento">
+		<type name="date" length="0"/>
+	</column>
+	<column name="Lote">
+		<type name="character varying" length="16"/>
+	</column>
+	<column name="Cantidad">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="HoraInicial">
+		<type name="time" length="0"/>
+	</column>
+	<constraint name="Produccion1_pkey" type="pk-constr" table="&quot;Gis&quot;.&quot;Produccion1&quot;">
+		<columns names="EnvaseId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="Produccion2">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+	<position x="3300" y="340"/>
+	<column name="EnvaseId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="HoraFinal">
+		<type name="time" length="0"/>
+	</column>
+	<column name="Turno">
+		<type name="character varying" length="16"/>
+	</column>
+	<column name="Observaciones">
+		<type name="character varying" length="512"/>
+	</column>
+	<column name="PurezaFinal">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="PresionFinal">
+		<type name="numeric" length="0"/>
+	</column>
+	<constraint name="Produccion2_pkey" type="pk-constr" table="&quot;Gis&quot;.&quot;Produccion2&quot;">
+		<columns names="EnvaseId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="Cliente_Id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+</sequence>
+
+<table name="Cliente">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+	<position x="2080" y="500"/>
+	<column name="Id" not-null="true" sequence="&quot;Gis&quot;.&quot;Cliente_Id_seq&quot;">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="NitCC">
+		<type name="character varying" length="32"/>
+	</column>
+	<column name="Nombre">
+		<type name="character varying" length="128"/>
+	</column>
+	<column name="Direccion">
+		<type name="character varying" length="128"/>
+	</column>
+	<column name="Telefono">
+		<type name="character varying" length="16"/>
+	</column>
+	<constraint name="Cliente_pkey" type="pk-constr" table="&quot;Gis&quot;.&quot;Cliente&quot;">
+		<columns names="Id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="Remision_Id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+</sequence>
+
+<table name="Remision">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+	<position x="2420" y="520"/>
+	<column name="Id" not-null="true" sequence="&quot;Gis&quot;.&quot;Remision_Id_seq&quot;">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="ClienteId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Numero" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Fecha">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="Remision_pkey" type="pk-constr" table="&quot;Gis&quot;.&quot;Remision&quot;">
+		<columns names="Id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="RemisionRecord">
+	<schema name="&quot;Gis&quot;"/>
+	<role name="unixjs"/>
+	<position x="2260" y="340"/>
+	<column name="RemisionId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="EnvaseId" not-null="true">
+		<type name="bigint" length="0"/>
+	</column>
+	<column name="Entra">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="Sale">
+		<type name="integer" length="0"/>
+	</column>
+	<constraint name="RemisionRecord_pkey" type="pk-constr" table="&quot;Gis&quot;.&quot;RemisionRecord&quot;">
+		<columns names="RemisionId" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<constraint name="Media_UserId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Auth&quot;.&quot;User&quot;" table="public.&quot;Media&quot;">
+	<columns names="UserId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="UserBasicInfo_UserId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Auth&quot;.&quot;User&quot;" table="&quot;Auth&quot;.&quot;UserBasicInfo&quot;">
+	<columns names="UserId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="UserComplementaryInfo_UserId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Auth&quot;.&quot;User&quot;" table="&quot;Auth&quot;.&quot;UserComplementaryInfo&quot;">
+	<columns names="UserId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="UserComplementaryInfo_Avatar_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="public.&quot;Media&quot;" table="&quot;Auth&quot;.&quot;UserComplementaryInfo&quot;">
+	<columns names="Avatar" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="UserGroup_UserId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Auth&quot;.&quot;User&quot;" table="&quot;Auth&quot;.&quot;UserGroup&quot;">
+	<columns names="UserId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="UserGroup_GroupId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Auth&quot;.&quot;Group&quot;" table="&quot;Auth&quot;.&quot;UserGroup&quot;">
+	<columns names="GroupId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="AppRole_GroupId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Auth&quot;.&quot;Group&quot;" table="&quot;Auth&quot;.&quot;AppRole&quot;">
+	<columns names="GroupId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="EnvaseComplementaryInfo_EnvaseId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Gis&quot;.&quot;Envase&quot;" table="&quot;Gis&quot;.&quot;EnvaseComplementaryInfo&quot;">
+	<columns names="EnvaseId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="EnvaseGeneralidades_EnvaseId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Gis&quot;.&quot;Envase&quot;" table="&quot;Gis&quot;.&quot;EnvaseGeneralidades&quot;">
+	<columns names="EnvaseId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="Produccion1_EnvaseId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Gis&quot;.&quot;Envase&quot;" table="&quot;Gis&quot;.&quot;Produccion1&quot;">
+	<columns names="EnvaseId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="Produccion2_EnvaseId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Gis&quot;.&quot;Envase&quot;" table="&quot;Gis&quot;.&quot;Produccion2&quot;">
+	<columns names="EnvaseId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="Remision_ClienteId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Gis&quot;.&quot;Cliente&quot;" table="&quot;Gis&quot;.&quot;Remision&quot;">
+	<columns names="ClienteId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="RemisionRecord_RemisionId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Gis&quot;.&quot;Remision&quot;" table="&quot;Gis&quot;.&quot;RemisionRecord&quot;">
+	<columns names="RemisionId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="RemisionRecord_EnvaseId_fkey" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="&quot;Gis&quot;.&quot;Envase&quot;" table="&quot;Gis&quot;.&quot;RemisionRecord&quot;">
+	<columns names="EnvaseId" ref-type="src-columns"/>
+	<columns names="Id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="&quot;rel_Media_User&quot;" type="relfk"
+	 custom-color="#e131c8"
+	 src-table="public.&quot;Media&quot;"
+	 dst-table="&quot;Auth&quot;.&quot;User&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_UserBasicInfo_User&quot;" type="relfk"
+	 custom-color="#68aabd"
+	 src-table="&quot;Auth&quot;.&quot;UserBasicInfo&quot;"
+	 dst-table="&quot;Auth&quot;.&quot;User&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_UserComplementaryInfo_User&quot;" type="relfk"
+	 custom-color="#36ae12"
+	 src-table="&quot;Auth&quot;.&quot;UserComplementaryInfo&quot;"
+	 dst-table="&quot;Auth&quot;.&quot;User&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_UserComplementaryInfo_Media&quot;" type="relfk"
+	 custom-color="#d2f4c3"
+	 src-table="&quot;Auth&quot;.&quot;UserComplementaryInfo&quot;"
+	 dst-table="public.&quot;Media&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_UserGroup_User&quot;" type="relfk"
+	 custom-color="#03698c"
+	 src-table="&quot;Auth&quot;.&quot;UserGroup&quot;"
+	 dst-table="&quot;Auth&quot;.&quot;User&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_UserGroup_Group&quot;" type="relfk"
+	 custom-color="#d56165"
+	 src-table="&quot;Auth&quot;.&quot;UserGroup&quot;"
+	 dst-table="&quot;Auth&quot;.&quot;Group&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_AppRole_Group&quot;" type="relfk"
+	 custom-color="#39175c"
+	 src-table="&quot;Auth&quot;.&quot;AppRole&quot;"
+	 dst-table="&quot;Auth&quot;.&quot;Group&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_EnvaseComplementaryInfo_Envase&quot;" type="relfk"
+	 custom-color="#6e4a1d"
+	 src-table="&quot;Gis&quot;.&quot;EnvaseComplementaryInfo&quot;"
+	 dst-table="&quot;Gis&quot;.&quot;Envase&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_EnvaseGeneralidades_Envase&quot;" type="relfk"
+	 custom-color="#e4b83b"
+	 src-table="&quot;Gis&quot;.&quot;EnvaseGeneralidades&quot;"
+	 dst-table="&quot;Gis&quot;.&quot;Envase&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_Produccion1_Envase&quot;" type="relfk"
+	 custom-color="#e75176"
+	 src-table="&quot;Gis&quot;.&quot;Produccion1&quot;"
+	 dst-table="&quot;Gis&quot;.&quot;Envase&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_Produccion2_Envase" type="relfk"
+	 custom-color="#cbeaa7"
+	 src-table="&quot;Gis&quot;.&quot;Produccion2&quot;"
+	 dst-table="&quot;Gis&quot;.&quot;Envase&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="src-label">
+		<position x="0.14" y="-1.2"/>
+	</label>
+</relationship>
+
+<relationship name="&quot;rel_Remision_Cliente&quot;" type="relfk"
+	 custom-color="#0bb77c"
+	 src-table="&quot;Gis&quot;.&quot;Remision&quot;"
+	 dst-table="&quot;Gis&quot;.&quot;Cliente&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="&quot;rel_RemisionRecord_Remision&quot;" type="relfk"
+	 custom-color="#d145c2"
+	 src-table="&quot;Gis&quot;.&quot;RemisionRecord&quot;"
+	 dst-table="&quot;Gis&quot;.&quot;Remision&quot;"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_RemisionRecord_Envase" type="relfk"
+	 custom-color="#21507e"
+	 src-table="&quot;Gis&quot;.&quot;RemisionRecord&quot;"
+	 dst-table="&quot;Gis&quot;.&quot;Envase&quot;"
+	 src-required="false" dst-required="false">
+	<label ref-type="dst-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<permission>
+	<object name="gis" type="database"/>
+	<privileges connect="true" temporary="true"/>
+</permission>
+<permission>
+	<object name="gis" type="database"/>
+	<roles names="postgres"/>
+	<privileges create="true" connect="true" temporary="true"/>
+</permission>
+<permission>
+	<object name="gis" type="database"/>
+	<roles names="unixjs"/>
+	<privileges create="true" connect="true" temporary="true"/>
+</permission>
+</dbmodel>

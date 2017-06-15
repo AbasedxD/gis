@@ -1,18 +1,21 @@
 {
-  "name": "8082",
+  "name": "servicio.js",
   "version": "1.0.0",
-  "description": "",
+  "description": "Servicio de actualizacion de base de datos GIS puerto 8082",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mario Fernando Caselles Villa",
   "license": "ISC",
   "dependencies": {
-    "pg": "^6.2.3",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "pg": "^6.2.4",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.30.4",
     "sequelize-cli": "^2.7.0"
-  }
+  },
+  "devDependencies": {}
 }
