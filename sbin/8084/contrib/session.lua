@@ -31,12 +31,12 @@ end
 
 
 --Method
-local Method = Http.Request ("Method");
+local Data = Http.Request ();
 
 --Start
-if Method == "Start" then
-    local UserName = Http.Request ("UserName");
-    local Password = Http.Request ("Password");
+if Method["Method"] == "Start" then
+    local UserName = Data["UserName"];
+    local Password = Data["Password"];
     local Q = Sql.Query;
     Q:New ([[SELECT "UserName", "Password" FROM "Auth"."User" WHERE "UserName"=? LIMIT 1;]]);
     Q:SetString (UserName);
