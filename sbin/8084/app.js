@@ -49,7 +49,6 @@ app.use ('/lib', express.static(path.join(__dirname, '../../lib')));
 
 //apps
 app.use('/', index);
-app.use('/users', users);
 app.use ('/session', session);
 app.use ('/gcontrol', gcontrol);
 app.use ('/guser', guser);

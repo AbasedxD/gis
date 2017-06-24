@@ -1,8 +1,7 @@
 var express = require('express')
 var router = express.Router()
 
-var Crypt = require('./index').Crypt;
-var User = require('../models/group');
+var Media = require('../models/media');
 
 // define the home page route
 router.post('/', function (req, res) {

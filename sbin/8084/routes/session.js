@@ -4,44 +4,41 @@ var router = express.Router()
 var Crypt = require('../contrib/security').Crypt;
 var User = require('../models/user');
 
-router.post('/', function (req, res, next) {
+router.post('/Start/', function (req, res, next) {
     var data = (req.body);
-    if (data.Method === 'Start')
+
+    User.findOne({ where: {UserName: data.UserName, Password: Crypt(data.Password)}})
+    .then(R => {
+      if(R !== null)
+      {
+        req.session.user = data.UserName;
+        res.json({Result: 1})
+      }
+      else
+      {
+        res.json({Result: 0});
+      }
+    });
+});
+
+router.post('/Renew/', function (req, res, next) {
+    var data = (req.body);
+
+    if (req.session.user)
     {
-        User.findOne({ where: {UserName: data.UserName, Password: Crypt(data.Password)}})
-        .then(R => {
-            if(R !== null)
-            {
-                req.session.user = data.UserName;
-                res.json({Result: 1})
-            }
-            else
-            {
-                res.json({Result: 0});
-            }
-
-        });
+      res.json({Result: 1});
     }
-
-    else if (data.Method === 'Renew')
-    {
-        if (req.session.user)
-        {
-            res.json({Result: 1});
-        }
-        res.json({Result: true});
-    }
-
-    else if (data.Method === 'Terminate')
-    {
-        req.session.user = undefined;
-        res.json({Result: 1});
-    }
-
     else
     {
-        res.json({Result: 0, Error: 'Method not supported.'});
+      res.json({Result: 0});
     }
-})
+});
+
+router.post('/Terminate/', function (req, res, next) {
+    var data = (req.body);
+
+    req.session.user = undefined;
+    res.json({Result: 1});
+});
 
 module.exports = router

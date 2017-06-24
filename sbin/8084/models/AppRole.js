@@ -8,11 +8,7 @@ const AppRole = db.define('AppRole', {
     Name: {type: Sequelize.STRING, unique: true},
     Label: Sequelize.STRING,
     Image: Sequelize.STRING,
-    GroupId: {
-      type: Sequelize.BIGINT,
-      references: 'Group',
-      referencesKey: 'Id'
-    }
+    GroupId: {type: Sequelize.BIGINT, references: 'Group', referencesKey: 'Id'}
   },
   {
     timestamps: false,
